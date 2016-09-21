@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Progressive Image Effect</title>
+  <style>
+    div {
+      width: 900px;
+      height: 650px;
+      filter: blur(20px);
+      background-size: cover;
+      background-color: #a07250;
+      animation: hd-quality 1s;
+      animation-delay: 3s;
+      animation-fill-mode: forwards;
+    }
+    div::after {
+      animation: low-quality 1s;
+      animation-delay: 1s;
+    }
+    @keyframes low-quality {
+      0% {
+          background-image: url(http://i.imgur.com/w45Fo4Y.jpg);
+      }
+    }
+    @keyframes hd-quality {
+      0% {
+          background-image: url(http://i.imgur.com/w45Fo4Y.jpg);
+          filter: blur(20px);
+      }
+      100% {
+          background-image: url(http://i.imgur.com/w45Fo4Y.jpg);
+          filter: blur(0px);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div style="background-image:url(http://i.imgur.com/w45Fo4Y.jpg);"></div>
+</body>
+</html>
